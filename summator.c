@@ -14,7 +14,7 @@ unsigned add(unsigned a, unsigned b)
 unsigned sub(unsigned x, unsigned y)
 {
 	if(y == 0) return x;
-	return sub(x ^ y, (~x & y) << 1);
+	return add(x, add(~y,1));
 }
 
 int U2add(int a, int b){
@@ -26,5 +26,5 @@ int U2add(int a, int b){
 int U2sub(int x, int y)
 {
 	if(y == 0) return x;
-	return sub(x ^ y, (~x & y) << 1);
+	return U2add(x, add(~y,1));
 }
