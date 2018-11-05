@@ -13,12 +13,8 @@ unsigned add(unsigned a, unsigned b)
 
 unsigned sub(unsigned x, unsigned y)
 {
-    while (y != 0) {
-        unsigned borrow = (~x) & y;
-        x = x ^ y;
-        y = borrow << 1;
-    }
-    return x;
+	if(y == 0) return x;
+	return sub(x ^ y, (~x & y) << 1);
 }
 
 int U2add(int a, int b){
@@ -27,12 +23,8 @@ int U2add(int a, int b){
 	 return U2add( a ^ b, (a & b) << 1);
 }
 
-int U2sub(int a, int b)
+int U2sub(int x, int y)
 {
-    while (b != 0) {
-        int borrow = (~a) & b;
-        a = a ^ b;
-        b = borrow << 1;
-    }
-    return a;
+	if(y == 0) return x;
+	return sub(x ^ y, (~x & y) << 1);
 }
