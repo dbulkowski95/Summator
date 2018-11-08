@@ -108,3 +108,31 @@ Test(subU2, minus_zero)
 	int second = -0;
 	cr_expect(U2sub(first, second) == first - second, "Expect true");
 }
+
+Test(itterAdd, a_equal_b)
+{
+	unsigned first = 102;
+	unsigned second = 10;
+	cr_expect(itterAdd(first, second) == first + second, "Expect true");
+}
+
+Test(AddByMacro, a_equal_b)
+{
+	unsigned first = 102;
+	unsigned second = 10;
+	cr_expect(AddByMacro(first, second) == first + second, "Expect true");
+}
+
+Test(Multiply, a_equal_b)
+{
+	unsigned first = 10;
+	unsigned second = 10;
+	cr_expect(multiply(first, second) == first * second, "Expect true");
+}
+
+Test(Multiply, a_greater_b)
+{
+	unsigned first = 10;
+	unsigned second = -10;
+	cr_expect(multiply(first, second) == first * second, "Expect true");
+}
