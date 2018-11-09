@@ -1,14 +1,10 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
 #include "summator.h"
-#include <ctype.h>
+#include <stdlib.h>
 
 unsigned add(const unsigned a, const unsigned b)
 {
-	 if (b == 0) return a;
+	if (b == 0) return a;
 	return add(a ^ b, (a & b) << 1);
-
 }
 
 unsigned sub(const unsigned x, const unsigned y)
