@@ -6,9 +6,8 @@
 
 unsigned add(const unsigned a, const unsigned b)
 {
-	 if (b == 0)
-		 return a;
-	return add( a ^ b, (a & b) << 1);
+	 if (b == 0) return a;
+	return add(a ^ b, (a & b) << 1);
 
 }
 
@@ -21,7 +20,7 @@ unsigned sub(const unsigned x, const unsigned y)
 int U2add(const int a, const int b)
 {
 	 if (b == 0) return a;
-	 return U2add( a ^ b, (a & b) << 1);
+	 return U2add(a ^ b, (a & b) << 1);
 }
 
 int U2sub(const int x, const int y)
